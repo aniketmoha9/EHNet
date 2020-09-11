@@ -7,6 +7,7 @@ import time
 import threading
 import numpy as np
 import config as cfg
+import pandas as pd
 try:
     from Queue import Queue
 except ImportError:
@@ -75,14 +76,17 @@ class SpeechReader(object):
         line_list = []
         with open(file_path, 'r') as f:
             for line in f.readlines():
-                line = line.strip().split()[0]
+                #line = line.strip().split()[0]
                 line_list.append(line)
         return line_list
 
     def read_data_list(self, data_list):
-        noisy_file, clean_file = data_list
-        noisy_list = self.get_file_line(noisy_file)
-        clean_list = self.get_file_line(clean_file)
+        df=pd.read_csv(data_list)
+        #noisy_file, clean_file = data_list
+        #noisy_list = self.get_file_line(noisy_file)
+        #clean_list = self.get_file_line(clean_file)
+        noisy_list = df['noise']
+        clean_list = df['clean']
         tuple_list = list(zip(noisy_list, clean_list))
         return tuple_list
  

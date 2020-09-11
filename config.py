@@ -20,14 +20,14 @@ longer_sent_len = 500
 
 
 # data_path
-train_noisy_list = './list/train_noisy_wav.lst'
-train_clean_list = './list/train_clean_wav.lst'
-dev_noisy_list = './list/test_noisy_wav.lst'
-dev_clean_list = './list/test_clean_wav.lst'
+train_data = '/content/gdrive/My Drive/kaggle/crnn/list/train.csv'
+#train_clean_list = '/content/gdrive/My Drive/kaggle/crnn/list/clean.lst'
+#dev_noisy_list = '/content/gdrive/My Drive/kaggle/crnn/list/val_noise.lst'
+dev_data = '/content/gdrive/My Drive/kaggle/crnn/list/val.csv'
 
 # job config
 job_type = "train"
-job_dir =  "job/Conv_Blstm_trial"
+job_dir =  "/content/gdrive/My Drive/kaggle/crnn/job/Conv_Blstm_trial"
 gpu_list = [2]
 
 # model config
